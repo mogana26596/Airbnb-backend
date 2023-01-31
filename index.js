@@ -14,6 +14,9 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/register', register);
+app.use('/', (req, res)=>{
+    res.send('Welcome Home again')
+})
 app.use('/', auth.authenticateUser);
 app.use('/product', product);
 app.listen(process.env.PORT);

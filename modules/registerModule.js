@@ -20,6 +20,7 @@ exports.signup = async (req,res,next) => {
     req.body.password = await bcrypt.hash(req.body.password, randomString);
 
     // Save in DB
+
     const savedResponse = await mongo.selectedDb.collection('users').insertOne({...req.body});
     res.send(savedResponse);
 }
