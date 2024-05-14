@@ -4,6 +4,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const register = require('./router/registerRouter');
 const product = require('./router/productRouter');
+// const product1= require('../modules/productModule');
 const auth = require("./modules/authModule");
 
 dotenv.config();
@@ -19,4 +20,5 @@ app.use('/', (req, res)=>{
 })
 app.use('/', auth.authenticateUser);
 app.use('/product', product);
+
 app.listen(process.env.PORT);
